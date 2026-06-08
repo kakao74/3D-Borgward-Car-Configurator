@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="canvas_styles.css">
     <link rel="shortcut icon" href="">
     <style></style>
-    <title>宝沃汽车WebVR</title>
+    <title>Borgward BX7 WebVR</title>
     <script src="playcanvas-stable.js"></script>
 
     <script>
@@ -64,11 +64,31 @@
 
     var app = pc.Application.getApplication();
 
-    //--------------------------------------------------------------
-    //当加载完成后，自动激活相应配置.
-    function starton()
-    {
+    function applyWhiteEnvironment() {
+        app.scene.ambientLight = new pc.Color(0.9, 0.9, 0.9);
+        app.scene.skyboxIntensity = 0.15;
 
+        var hall = app.root.findByName('BW_hall_1');
+        if (hall) {
+            hall.enabled = false;
+        }
+
+        var ground = app.root.findByName('BW_hall_1_ground');
+        if (ground) {
+            ground.enabled = false;
+        }
+
+        ['ext_cam', 'int_cam'].forEach(function (camName) {
+            var camEntity = app.root.findByName(camName);
+            if (camEntity && camEntity.camera) {
+                camEntity.camera.clearColor = new pc.Color(1, 1, 1, 1);
+            }
+        });
+    }
+
+    // Apply configuration when loading completes.
+    function starton() {
+        applyWhiteEnvironment();
         parent.UIon();
     }
     app.on('start', starton);//

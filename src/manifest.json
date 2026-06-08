@@ -1,0 +1,8 @@
+{
+  "name": "Borgward BX7 360",
+  "short_name": "BX7 360",
+  "start_url": "./canvas_index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}

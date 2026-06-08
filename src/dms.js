@@ -826,7 +826,7 @@
      * @method getType
      */
     getType: function () {
-      // var typeArr = DMS.types;
+      var typeArr = DMS.types || [];
       for (var j = 0; j < typeArr.length; j++)
       {
         switch (typeArr[j])
