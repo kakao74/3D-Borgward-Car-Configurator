@@ -64,8 +64,9 @@
 
     var app = pc.Application.getApplication();
 
-    function applyWhiteEnvironment() {
-        app.scene.ambientLight = new pc.Color(0.9, 0.9, 0.9);
+    function applyGreyEnvironment() {
+        var grey = 0.78;
+        app.scene.ambientLight = new pc.Color(grey, grey, grey);
         app.scene.skyboxIntensity = 0.15;
 
         var hall = app.root.findByName('BW_hall_1');
@@ -81,15 +82,41 @@
         ['ext_cam', 'int_cam'].forEach(function (camName) {
             var camEntity = app.root.findByName(camName);
             if (camEntity && camEntity.camera) {
-                camEntity.camera.clearColor = new pc.Color(1, 1, 1, 1);
+                camEntity.camera.clearColor = new pc.Color(grey, grey, grey, 1);
             }
+        });
+    }
+
+    function fixTrunkRearGlass() {
+        var staticGlass = app.root.findByName('glass');
+        var closedGlass = app.root.findByName('door_T_dp');
+
+        function setClosedGlassVisible(visible) {
+            if (staticGlass) {
+                staticGlass.enabled = visible;
+            }
+            if (closedGlass) {
+                closedGlass.enabled = visible;
+            }
+        }
+
+        app.on('ext:open_door_t', function () {
+            setClosedGlassVisible(false);
+        });
+        app.on('ext:close_door_t', function () {
+            setTimeout(function () {
+                setClosedGlassVisible(true);
+            }, 1000);
         });
     }
 
     // Apply configuration when loading completes.
     function starton() {
-        applyWhiteEnvironment();
-        parent.UIon();
+        applyGreyEnvironment();
+        fixTrunkRearGlass();
+        try {
+            parent.UIon();
+        } catch (e) {}
     }
     app.on('start', starton);//
 
