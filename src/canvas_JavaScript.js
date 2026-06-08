@@ -1,1 +1,113 @@
-var _0x4965=['test','getElementById','loadinint','translate(-50%,-45%)\x20\x20scale(0.5)','style','transform','translate(-50%,-45%)\x20\x20scale(0.8)','Application','getApplication','white','opacity','display','none','block','start','preload:progress','loadnumberbar','loadnumber','round','width','innerHTML','15%','32%','64px','48%','96px','64%','128px','80%','160px','100%','200px','loadframeint','scale(0.5)','userAgent','Android','iPhone','Windows\x20Phone','iPad','length','indexOf'];(function(_0x29de0c,_0x327aed){var _0x2ba121=function(_0x2c4093){while(--_0x2c4093){_0x29de0c['push'](_0x29de0c['shift']());}};_0x2ba121(++_0x327aed);}(_0x4965,0x1bc));var _0x1410=function(_0x1596a1,_0x41d08e){_0x1596a1=_0x1596a1-0x0;var _0x2256ab=_0x4965[_0x1596a1];return _0x2256ab;};function getSizew(){for(var _0x129e3b=navigator[_0x1410('0x0')],_0xec6f53=[_0x1410('0x1'),_0x1410('0x2'),_0x1410('0x3'),_0x1410('0x4')],_0x423a55=!0x0,_0x2ad680=0x0;_0x2ad680<_0xec6f53[_0x1410('0x5')];_0x2ad680++)if(0x0<_0x129e3b[_0x1410('0x6')](_0xec6f53[_0x2ad680])){_0x423a55=!0x1;break;}/(iPhone|Android|Windows Phone )/i[_0x1410('0x7')](navigator[_0x1410('0x0')])?document[_0x1410('0x8')](_0x1410('0x9'))['style']['transform']=_0x1410('0xa'):document[_0x1410('0x8')]('loadinint')[_0x1410('0xb')][_0x1410('0xc')]=_0x1410('0xd');return _0x423a55;}getSizew();var app=pc[_0x1410('0xe')][_0x1410('0xf')]();function Load(){document[_0x1410('0x8')](_0x1410('0x10'))[_0x1410('0xb')][_0x1410('0x11')]=0x0;setTimeout(function(){document[_0x1410('0x8')](_0x1410('0x10'))[_0x1410('0xb')][_0x1410('0x12')]=_0x1410('0x13');},0x1f4);document[_0x1410('0x8')]('loadframeint')[_0x1410('0xb')]['display']=_0x1410('0x14');app['on'](_0x1410('0x15'),function(){document['getElementById']('loadframeint')[_0x1410('0xb')][_0x1410('0x12')]=_0x1410('0x13');});app['on'](_0x1410('0x16'),function(_0x46df30){var _0xe7c7c8=document[_0x1410('0x8')](_0x1410('0x17')),_0x5bc4e4=document[_0x1410('0x8')](_0x1410('0x18'));_0xe7c7c8&&(_0x46df30=Math[_0x1410('0x19')](0x64*_0x46df30),_0xe7c7c8[_0x1410('0xb')][_0x1410('0x1a')]=0x2*_0x46df30+'px',_0x5bc4e4[_0x1410('0x1b')]=_0x46df30+'%');});}function intnumbx(_0x35c4b3){switch(_0x35c4b3){case 0x1:intloadx=0x1;document[_0x1410('0x8')](_0x1410('0x18'))[_0x1410('0x1b')]=_0x1410('0x1c');document[_0x1410('0x8')]('loadnumberbar')[_0x1410('0xb')][_0x1410('0x1a')]='30px';break;case 0x2:document[_0x1410('0x8')](_0x1410('0x18'))['innerHTML']=_0x1410('0x1d');document[_0x1410('0x8')](_0x1410('0x17'))[_0x1410('0xb')][_0x1410('0x1a')]=_0x1410('0x1e');break;case 0x3:document[_0x1410('0x8')](_0x1410('0x18'))[_0x1410('0x1b')]=_0x1410('0x1f');document[_0x1410('0x8')](_0x1410('0x17'))[_0x1410('0xb')][_0x1410('0x1a')]=_0x1410('0x20');break;case 0x4:document[_0x1410('0x8')]('loadnumber')[_0x1410('0x1b')]=_0x1410('0x21');document[_0x1410('0x8')]('loadnumberbar')[_0x1410('0xb')][_0x1410('0x1a')]=_0x1410('0x22');break;case 0x5:document[_0x1410('0x8')](_0x1410('0x18'))['innerHTML']=_0x1410('0x23');document[_0x1410('0x8')](_0x1410('0x17'))[_0x1410('0xb')][_0x1410('0x1a')]=_0x1410('0x24');break;case 0x6:document[_0x1410('0x8')]('loadnumber')['innerHTML']=_0x1410('0x25');document[_0x1410('0x8')](_0x1410('0x17'))[_0x1410('0xb')][_0x1410('0x1a')]=_0x1410('0x26');setTimeout(function(){document[_0x1410('0x8')](_0x1410('0x27'))[_0x1410('0xb')][_0x1410('0x12')]=_0x1410('0x13');},0x12c);break;default:document[_0x1410('0x8')](_0x1410('0x17'))[_0x1410('0x1b')]='0%';}}function loadscale(){document['getElementById'](_0x1410('0x9'))[_0x1410('0xc')]=_0x1410('0x28');};
+function getSizew() {
+    var ua = navigator.userAgent;
+    var mobileAgents = ['Android', 'iPhone', 'Windows Phone', 'iPad'];
+    var isDesktop = true;
+
+    for (var i = 0; i < mobileAgents.length; i++) {
+        if (ua.indexOf(mobileAgents[i]) > 0) {
+            isDesktop = false;
+            break;
+        }
+    }
+
+    var loadPanel = document.getElementById('loadinint');
+    if (loadPanel) {
+        if (/(iPhone|Android|Windows Phone )/i.test(ua)) {
+            loadPanel.style.transform = 'translate(-50%,-42%) scale(0.55)';
+        } else {
+            loadPanel.style.transform = 'translate(-50%,-42%) scale(0.85)';
+        }
+    }
+
+    return isDesktop;
+}
+
+getSizew();
+
+var app = pc.Application.getApplication();
+
+function setLoadProgress(progress) {
+    var bar = document.getElementById('loadnumberbar');
+    var label = document.getElementById('loadnumber');
+    if (!bar || !label) {
+        return;
+    }
+
+    var percent = Math.round(100 * progress);
+    bar.style.width = percent + '%';
+    label.innerHTML = percent + '%';
+}
+
+function Load() {
+    var white = document.getElementById('white');
+    if (white) {
+        white.style.opacity = 0;
+        setTimeout(function () {
+            white.style.display = 'none';
+        }, 500);
+    }
+
+    var loadFrame = document.getElementById('loadframeint');
+    if (loadFrame) {
+        loadFrame.style.display = 'block';
+    }
+
+    app.on('start', function () {
+        if (loadFrame) {
+            loadFrame.style.display = 'none';
+        }
+    });
+
+    app.on('preload:progress', setLoadProgress);
+}
+
+function intnumbx(step) {
+    var bar = document.getElementById('loadnumberbar');
+    var label = document.getElementById('loadnumber');
+    if (!bar || !label) {
+        return;
+    }
+
+    switch (step) {
+        case 1:
+            label.innerHTML = '15%';
+            bar.style.width = '15%';
+            break;
+        case 2:
+            label.innerHTML = '32%';
+            bar.style.width = '32%';
+            break;
+        case 3:
+            label.innerHTML = '48%';
+            bar.style.width = '48%';
+            break;
+        case 4:
+            label.innerHTML = '64%';
+            bar.style.width = '64%';
+            break;
+        case 5:
+            label.innerHTML = '80%';
+            bar.style.width = '80%';
+            break;
+        case 6:
+            label.innerHTML = '100%';
+            bar.style.width = '100%';
+            setTimeout(function () {
+                var loadFrame = document.getElementById('loadframeint');
+                if (loadFrame) {
+                    loadFrame.style.display = 'none';
+                }
+            }, 300);
+            break;
+        default:
+            label.innerHTML = '0%';
+            bar.style.width = '0%';
+    }
+}
+
+function loadscale() {
+    var loadPanel = document.getElementById('loadinint');
+    if (loadPanel) {
+        loadPanel.style.transform = 'translate(-50%,-42%) scale(0.55)';
+    }
+}
